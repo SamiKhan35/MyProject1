@@ -1,47 +1,68 @@
+// Navbar.jsx
 import React from 'react';
-import HeroSection from '../HeroSection/HeroSection';
-import { FaWhatsapp } from "react-icons/fa";
-const Header = () => {
+import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaTwitter, FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
+import HeroSection from '../HeroSection/HeroSection.jsx';
+import logo from '../../assets/images/logo.png';
+
+const Navbar = () => {
   return (
-    <header>
-      {/* Background Banner Image  */}
-   {/* <img src="/Images/SLIDE_02.jpg" alt='Banner' className="h-64 w-full object-cover" /> */}
-      
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <img
-          src="//grandeurchauffeurs.com/wp-content/uploads/2019/06/logo-1.png"
-          alt="Grandeur Chauffeurs Logo"
-          className="h-16 w-auto"
-        />
+    <header className="bg-gray-900 text-white text-sm p-6 ">
+      {/* Top Bar */}
+      <div className="flex justify-between items-center px-4 py-2 border-b border-gray-700 h-16 text-lg">
+        <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-1">
+            <FaEnvelope className="text-yellow-500" />
+            <span>info@grandeurchauffeurs.com</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <FaWhatsapp className="text-green-500" />
+            <span>+44 7766 557716</span>
+          </div>
+          <div className="flex items-center space-x-1">
+            <FaPhoneAlt className="text-yellow-500" />
+            <span>+44 203 6171 114</span>
+          </div>
+        </div>
 
-        {/* Navigation Menu */}
-        <nav>
-          <ul className="flex gap-6 flex-wrap items-center">
-            <li className="hover:text-yellow-300 cursor-pointer">HOME</li>
-            <li className="hover:text-yellow-300 cursor-pointer">ABOUT US</li>
-            <li className="hover:text-yellow-300 cursor-pointer">TESTIMONIALS</li>
-            <li className="hover:text-yellow-300 cursor-pointer">CONTACT US</li>
-            <li className="hover:text-yellow-300 cursor-pointer">FAQ</li>
-            <li className="hover:text-yellow-300 cursor-pointer">GALLERY</li>
-            <li className="hover:text-yellow-300 cursor-pointer">
-              <a href="https://wa.me/447766557716" className="flex flex-col">
-                <span className='mx-10 mt-4 text-yellow-300'>Call to book an order:</span>
-                <FaWhatsapp  size={40} className='text-yellow-300 mx-0'/>
-
-                <span className="font-semibold mx-10 mt-0 text-xl">+44 7766 557716</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+        <div className="flex items-center space-x-3">
+          <span>Follow us</span>
+          <FaTwitter className="hover:text-yellow-500 cursor-pointer" />
+          <FaFacebook className="hover:text-yellow-500 cursor-pointer" />
+          <FaInstagram className="hover:text-yellow-500 cursor-pointer" />
+          <FaYoutube className="hover:text-yellow-500 cursor-pointer" />
+        </div>
       </div>
-      <hr className='border-t-2 border-dashed border-lightgray my-2'/>
-    <div>
+
+      {/* Main Navbar */}
+      <div className="flex justify-between items-center px-4 py-3 ">
+        {/* Logo */}
+        <div className="flex  items-center space-x-2">
+          <img src={logo} alt="Grandeur Chauffeurs" className="h-16 w-auto" />
+          {/* <span className="text-yellow-500 font-bold text-lg">Grandeur Chauffeurs</span> */}
+        </div>
+
+        {/* Links */}
+        <nav className="hidden md:flex space-x-6 text-sm">
+          <a href="#Home" className="hover:text-yellow-500">Home</a>
+          <a href="#About Us" className="hover:text-yellow-500">About Us</a>
+          <a href="#Testimonials" className="hover:text-yellow-500">Testimonials</a>
+          <a href="#Contact Us" className="hover:text-yellow-500">Contact Us</a>
+          <a href="#FAQ" className="hover:text-yellow-500">FAQ</a>
+          <a href="#Gallery" className="hover:text-yellow-500">Gallery</a>
+        </nav>
+
+        {/* Call to Book */}
+        <div className="flex items-center space-x-2 text-yellow-500 font-semibold">
+          <FaWhatsapp className="text-xl" />
+          <p>call to book order</p>
+          <span>+44 7766 557716</span>
+        </div>
+      </div>
+      <div>
         <HeroSection/>
-    </div>
+      </div>
     </header>
-   
   );
 };
 
-export default Header;
+export default Navbar;

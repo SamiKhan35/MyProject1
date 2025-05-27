@@ -15,7 +15,7 @@ const Mid = () => {
             Explore the best of London with our best of luxury cars for a comfortable tour.
           </p>
           <div className='flex flex-col items-center justify-center gap-4 md:flex-row md:justify-start'>
-            <button className='flex items-center gap-2 p-3 px-6 text-white bg-yellow-300 hover:bg-black transition duration-300'>
+            <button className='flex items-center gap-2 p-3 px-6 text-white bg-yellow-400 hover:bg-black transition duration-300'>
               Read More <FaArrowRight />
             </button>
             
